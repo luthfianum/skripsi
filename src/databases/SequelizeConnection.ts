@@ -31,11 +31,10 @@ class SequelizeConnection {
     try {
       await sequelize.authenticate();
       console.log("Database connection authenticated successfully");
-      return sequelize;
     } catch (error : any) {
       console.log("Error while creation connection to database :: " + error.message);
-      return sequelize;
     }
+    return sequelize;
   }
 
   static async close(): Promise<Sequelize> {
@@ -43,11 +42,10 @@ class SequelizeConnection {
     try {
       await sequelize.close();
       console.log("Database connection closed successfully");
-      return sequelize;
     } catch (error : any) {
       console.log("Error while closing database connection :: " + error.message);
-      return sequelize;
     }
+    return sequelize;
   }
 
 }
