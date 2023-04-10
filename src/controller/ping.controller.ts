@@ -1,7 +1,9 @@
 import { Get, Route } from "tsoa";
 
 interface PingResponse {
+  uptime: number;
   message: string;
+  date: Date;
 }
 
 @Route("ping")
@@ -9,7 +11,9 @@ export default class PingController {
   @Get()
   public async getMessage(): Promise<PingResponse> {
     return {
-      message: "pong",
+      uptime: process.uptime(),
+      message: 'Ok',
+      date: new Date()
     };
   }
 }

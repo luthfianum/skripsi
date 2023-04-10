@@ -8,12 +8,22 @@
 		"schemas": {
 			"PingResponse": {
 				"properties": {
+					"uptime": {
+						"type": "number",
+						"format": "double"
+					},
 					"message": {
 						"type": "string"
+					},
+					"date": {
+						"type": "string",
+						"format": "date-time"
 					}
 				},
 				"required": [
-					"message"
+					"uptime",
+					"message",
+					"date"
 				],
 				"type": "object",
 				"additionalProperties": false
@@ -22,12 +32,14 @@
 		"securitySchemes": {}
 	},
 	"info": {
-		"title": "SurveyUp",
+		"title": "surveyup-api",
 		"version": "1.0.0",
 		"license": {
 			"name": "ISC"
 		},
-		"contact": {}
+		"contact": {
+			"name": "Luthfi Anum Pratama"
+		}
 	},
 	"openapi": "3.0.0",
 	"paths": {
