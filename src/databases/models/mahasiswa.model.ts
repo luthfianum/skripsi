@@ -1,4 +1,4 @@
-import { Model, Sequelize,DataTypes } from "sequelize";
+import { Model, Sequelize, DataTypes } from "sequelize";
 import { Mahasiswa as MahasiswaProps, MahasiswaGender } from "../types/mahasiswa.type";
 
 class Mahasiswa extends Model implements MahasiswaProps {
@@ -15,7 +15,7 @@ class Mahasiswa extends Model implements MahasiswaProps {
   public readonly updatedAt!: Date;
   public readonly deletedAt!: Date;
 
-  public static associations: {};
+  // public static associations: {};
 
   public static initModel(sequelize: Sequelize): void {
     Mahasiswa.init(
@@ -60,9 +60,9 @@ class Mahasiswa extends Model implements MahasiswaProps {
     )
   }
 
-  public static associateModel(): void {
-  }
-  
+  // public static associateModel(): void {
+  // }
+
   public static hashPassword(password: string): string {
     return password;
   }
@@ -71,3 +71,5 @@ class Mahasiswa extends Model implements MahasiswaProps {
     return password === hash;
   }
 }
+
+export default Mahasiswa;
